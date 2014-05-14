@@ -387,7 +387,7 @@ class Bookkeeper(object):
                     assert pyobj._freeze_() is True
                 else:
                     if hasattr(pyobj, '__call__'):
-                        msg = "object with a __call__ is not RPython"
+                        msg = "object "+type(pyobj).__name__+" with a __call__ is not RPython"
                     else:
                         msg = "unexpected prebuilt constant"
                     raise Exception("%s: %r" % (msg, pyobj))
